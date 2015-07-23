@@ -1,0 +1,57 @@
+import java.util.Calendar;
+
+
+public class HeartRates {
+	
+	private String firstName;//Variable
+	private String lastName;//Variable
+	private int month, day, year;//Variable
+	
+	//Constructor
+	public HeartRates(String fName, String lName, int mon, int days, int dYear) {
+		firstName = fName;
+		lastName = lName;
+		month = mon;
+		day = days;
+		year = dYear;
+	}
+	
+	public void setFirstName(String fName) {
+		firstName = fName;
+	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	
+	public void setLastName(String lName) {
+		lastName = lName;
+		}
+		
+	public String getlastName() {
+		return firstName;
+	}
+	
+	public void setDOB(int mon, int days, int dyear) {
+		month = mon;//Month
+		day = days;//Day
+		year = dyear;//Year
+	}
+	
+	public int getDOB() {
+		return day/month/year;
+	}
+	public int getAge(){
+	Calendar cd = Calendar.getInstance();
+		return (cd.get(Calendar.YEAR)) - year;
+		}
+	
+	public int MaximumHeartRate() {
+		return 220 - getAge();
+	}
+	
+	//This will display the target heart rate range
+	public void targetHeartRate(){
+	System.out.print("Target Heart Rate Range: "+ MaximumHeartRate() * 0.5 + " to "+ MaximumHeartRate() * 0.85);
+	} 
+}
