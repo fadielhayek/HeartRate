@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class HeartRatesApp {
+
+	public static void main(String[] args) {
+		
+		
+		Scanner input = new Scanner(System.in);//Scanner
+		
+		System.out.println("Enter First Name");
+		String firstName = input.nextLine();
+		System.out.println("Enter Last Name");
+		String lastName = input.nextLine();
+		System.out.println("Enter Date of Birth");
+		int month = input.nextInt();
+		int day = input.nextInt();
+		int year = input.nextInt();
+		
+		HeartRates myHeartRate = new HeartRates(firstName, lastName, month, day, year);
+		
+		System.out.print("Name: "+ firstName +", " + lastName);
+		System.out.printf("\nAge in years: %d \n", myHeartRate.getAge());
+		System.out.println("Maximum Heartrate: "+ myHeartRate.MaximumHeartRate());
+        myHeartRate.targetHeartRate();
+
+	}
+
+}
